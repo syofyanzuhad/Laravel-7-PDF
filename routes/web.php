@@ -20,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/users', 'HomeController@users')->name('users');
+Route::get('/edit/certificate/', 'HomeController@editCertificate')->name('edit.certificate');
+Route::get('/certificate/{id}', 'HomeController@certificate')->name('certificate');
+Route::get('/certificate/print_pdf/{id}', 'HomeController@print_pdf')->name('print.certificate');
