@@ -50,8 +50,8 @@
          </table>
          <span style="font-size:25px"><i>This is to certify that</i></span>
          <br>
-         <span style="font-size:40px"><b>Syofyan Zuhad</b></span><br/>
-         <span style="font-size:25px"><i>has completed the study at</i> <span class="text-info">Pondok Programmer</span></span> <br/><br/>
+         <span style="font-size:40px"><b>{{ $user->name }}</b></span><br/>
+         <span style="font-size:25px"><i>has completed the study at</i> <span class="text-info">Pondok Programmer</span><i> in </i>:</span> <br/><br/>
          <span style="font-size:30px" class="text-info">Laravel Backend Developer</span> <br/>
          <span style="font-size:20px">with score of <span class="text-info font-weight-bold display-4">A+</span></span> 
          <br/><br/>

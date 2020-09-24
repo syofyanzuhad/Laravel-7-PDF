@@ -39,13 +39,14 @@ class HomeController extends Controller
 
     public function certificate($id) {
         $user = User::find($id);
-        $pdf = PDF::loadView('certificate', ['users' => $user]);
+        $pdf = PDF::loadView('certificate', ['user' => $user]);
         return $pdf->setPaper('a4', 'landscape')->stream();
     }
 
-    public function print_pdf() {
-        $html = view('certificate');
+    public function print_pdf($id) {
+        $user = User::find($id);
 
-        PDF::loadHTML($html)->setPaper('a4', 'landscape')->setWarnings(false)->save('myfile.pdf');
+        $pdf = PDF::loadView('certificate', ['user' => $user]);
+        return $pdf->download($user->name.'_certificate.pdf');
     }
 }
