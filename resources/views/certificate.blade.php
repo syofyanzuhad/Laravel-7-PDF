@@ -8,31 +8,17 @@
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
    <style>
-      .background {
-         position: relative;
-         background-color: #00b56d00;
-      }
-      .background::before {
-         content: "";
-         opacity: .4;
-         width: 96%;
-         height: 90%;
-         position:absolute;
-         top:1em;
-         left:1em;
-         filter: blur(10px);
-         background: url('https://api.pondokprogrammer.com/img/icon.png') no-repeat center;
-         background-size:cover;
-         z-index: -1;
-      }
+      @page { margin: 0in; }
       td {
          border: none !important;
       }
    </style>
 </head>
+
 <body>
-   <div class="background">
-      <div class="my-5 p-auto" style="margin: 2%; padding: 0px; text-align:center; border: 5px solid #00b56c">
+   <img src="{{ url('img/sertifikat 1.png') }}" alt="cert" width="100%" id="background" style="position: absolute; z-index: -1">
+   <div class="background mt-5">
+      <div class="my-5 p-auto" style="margin: 2%; padding: 0px; text-align:center; ">
          <table align="center" class="table text-center m-0 p-0">
             <tr>
                <td>
@@ -50,9 +36,9 @@
          </table>
          <span style="font-size:25px"><i>This is to certify that</i></span>
          <br>
-         <span style="font-size:40px"><b>{{ $user->name }}</b></span><br/>
+         <span style="font-size:40px"><b>{{ isset($user->name) ? $user->name : "Syofyan Zuhad" }}</b></span><br/>
          <span style="font-size:25px"><i>has completed the study at</i> <span class="text-info">Pondok Programmer</span><i> in </i>:</span> <br/><br/>
-         <span style="font-size:30px" class="text-info">Laravel Backend Developer</span> <br/>
+         <span style="font-size:30px" class="text-info">Laravel Backend Development</span> <br/>
          <span style="font-size:20px">with score of <span class="text-info font-weight-bold display-4">A+</span></span> 
          <br/><br/>
          <table align="center" class="table text-center" style="border: none !important;">

@@ -38,6 +38,8 @@ class HomeController extends Controller
     }
 
     public function certificate($id) {
+        set_time_limit(600);
+
         $user = User::find($id);
         $pdf = PDF::loadView('certificate', ['user' => $user]);
         return $pdf->setPaper('a4', 'landscape')->stream();
